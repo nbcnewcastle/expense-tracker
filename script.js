@@ -1,9 +1,9 @@
-// Initialize Firebase with your config
+// Use compat version (NO imports)
 const firebaseConfig = {
   apiKey: "AIzaSyArwCYv-nzFeD_IaHprR-JatKdd5gvd1Po",
   authDomain: "expensetrackerapp-6b738.firebaseapp.com",
   projectId: "expensetrackerapp-6b738",
-  storageBucket: "expensetrackerapp-6b738.firebasestorage.app",
+  storageBucket: "expensetrackerapp-6b738.appspot.com", // fixed here
   messagingSenderId: "610375205323",
   appId: "1:610375205323:web:66f407e7e1fb2fca96764e"
 };
@@ -30,7 +30,8 @@ form.addEventListener('submit', async (e) => {
       amount: parseFloat(amount),
       category,
       date,
-      description
+      description,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
 
     form.reset();
