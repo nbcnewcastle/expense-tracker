@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    form {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    li {
+      background: white;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Expense Tracker</h1>
+
+  <form id="expense-form">
+    <input type="number" id="amount" placeholder="Amount" required />
+    <input type="text" id="category" placeholder="Category" required />
+    <input type="date" id="date" required />
+    <input type="text" id="description" placeholder="Description" />
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <h2>Expenses</h2>
+  <ul id="expense-list"></ul>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"></script>
+
+  <!-- Your main JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
